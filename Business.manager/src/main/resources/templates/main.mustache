@@ -5,6 +5,12 @@
         <title>Главная</title>
     </head>
     <body>
+        <div>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
         <div>Зарегистрироваться</div>
         <div>
             <form method="post">
@@ -17,6 +23,7 @@
                 <label>
                     <input type="text" name="pass" placeholder="Придумайте пароль...">
                 </label>
+                <input type="hidden", name="_csrf" value="{{_csrf.token}}"/>
                 <button type="submit">Создать аккаунт</button>
             </form>
         </div>
